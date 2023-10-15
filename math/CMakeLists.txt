@@ -1,0 +1,1 @@
+add_library(testLibrary SHARED mymath.cpp)

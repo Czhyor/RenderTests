@@ -1,0 +1,16 @@
+<RCC>
+	<qresource prefix="/">
+		<file>main.qml</file>
+		<file>CollapsibleContainer.qml</file>
+		<file>ModelListPanel.qml</file>
+		<file>ModelPropertyPanel.qml</file>
+		<file>ScenePropertyPanel.qml</file>
+		<file>MyButton.qml</file>
+		<file>cubemap/Yokohama2/negx.jpg</file>
+		<file>cubemap/Yokohama2/negy.jpg</file>
+		<file>cubemap/Yokohama2/negz.jpg</file>
+		<file>cubemap/Yokohama2/posx.jpg</file>
+		<file>cubemap/Yokohama2/posy.jpg</file>
+		<file>cubemap/Yokohama2/posz.jpg</file>
+	</qresource>
+</RCC>
