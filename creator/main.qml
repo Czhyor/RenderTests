@@ -22,38 +22,38 @@ ApplicationWindow {
     }
 
     menuBar: MenuBar {
-        Menu {
-            title: qsTr("Project")
-            Action {
-                text: qsTr("New")
-                onCheckedChanged: {
-                    console.log("checked changed", checked)
-                }
-                onTriggered: {
-                    console.log("action triggered")
-                }
-            }
-            Action {
-                text: qsTr("open")
-            }
-            Action {
-                text: qsTr("save")
-            }
-            Action {
-                text: qsTr("run")
-            }
-        }
+        //Menu {
+        //    title: qsTr("Project")
+        //    Action {
+        //        text: qsTr("New")
+        //        onCheckedChanged: {
+        //            console.log("checked changed", checked)
+        //        }
+        //        onTriggered: {
+        //            console.log("action triggered")
+        //        }
+        //    }
+        //    Action {
+        //        text: qsTr("open")
+        //    }
+        //    Action {
+        //        text: qsTr("save")
+        //    }
+        //    Action {
+        //        text: qsTr("run")
+        //    }
+        //}
         Menu {
 
             title: qsTr("Edit")
 
             Menu {
                 title: qsTr("add")
-                Action {
-                    text: qsTr("map")
-                }
+                //Action {
+                //    text: qsTr("map")
+                //}
                 MenuItem {
-                    text: qsTr("human")
+                    text: qsTr("model")
                     onTriggered: {
                         con.target = fileDialog
                         fileDialog.open();
@@ -108,46 +108,46 @@ ApplicationWindow {
                 }
             }
 
-            Action {
-                text: qsTr("object")
-            }
-
-            Action {
-                text: qsTr("show")
-            }
-            Action {
-                text: qsTr("hide")
-            }
+            //Action {
+            //    text: qsTr("object")
+            //}
+            //
+            //Action {
+            //    text: qsTr("show")
+            //}
+            //Action {
+            //    text: qsTr("hide")
+            //}
         }
-        Menu {
-            title: qsTr("View")
-            Action {
-                text: qsTr("tool")
-            }
-        }
-
-        Menu {
-            title: qsTr("Debug")
-            Action {
-                text: qsTr("run")
-                onTriggered: {
-                    $Interface.run();
-                }
-            }
-            Action {
-                text: qsTr("stop")
-                onTriggered: {
-                    $Interface.stop();
-                }
-            }
-
-            Action {
-                text: qsTr("reset")
-                onTriggered: {
-                    $Interface.reset();
-                }
-            }
-        }
+        //Menu {
+        //    title: qsTr("View")
+        //    Action {
+        //        text: qsTr("tool")
+        //    }
+        //}
+        //
+        //Menu {
+        //    title: qsTr("Debug")
+        //    Action {
+        //        text: qsTr("run")
+        //        onTriggered: {
+        //            $Interface.run();
+        //        }
+        //    }
+        //    Action {
+        //        text: qsTr("stop")
+        //        onTriggered: {
+        //            $Interface.stop();
+        //        }
+        //    }
+        //
+        //    Action {
+        //        text: qsTr("reset")
+        //        onTriggered: {
+        //            $Interface.reset();
+        //        }
+        //    }
+        //}
     }
 
 	Canvas3d {

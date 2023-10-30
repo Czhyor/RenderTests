@@ -11,6 +11,7 @@
 #include <osg/ShapeDrawable>
 #include <osg/Texture2D>
 #include <osg/BufferIndexBinding>
+#include <osg/Depth>
 #include <osgDB/ReadFile>
 #include <osgDB/WriteFile>
 #include <osgManipulator/Translate1DDragger>
@@ -571,7 +572,7 @@ void Interface::enableManipulate(Node* node)
 		osg::ref_ptr<osg::MatrixTransform> m_mt;
 		std::shared_ptr<Physical::Object> m_phyObj;
 
-		double m_step = 0.1;
+		double m_step = 1.0;
 
 		std::shared_ptr<Physical::PhysicalEngine> m_phyEngine;
 	};
@@ -1067,6 +1068,7 @@ void main()
 	program->addShader(new osg::Shader(osg::Shader::VERTEX, vs));
 	program->addShader(new osg::Shader(osg::Shader::FRAGMENT, fs));
 	geode->getOrCreateStateSet()->setAttributeAndModes(program, osg::StateAttribute::ON);
+	geode->getOrCreateStateSet()->setAttributeAndModes(new osg::Depth(osg::Depth::ALWAYS, 0, 1, false));
 	geode->getOrCreateStateSet()->setMode(GL_DEPTH_TEST, osg::StateAttribute::OFF);
 	return geode;
 }
@@ -1100,7 +1102,7 @@ void Interface::addCubeMap()
 	//bool isWrite = osgDB::writeImageFile(*negx, "./negx.png");
 
 	osg::Geode* geode = createCubeMapRect(tex_negx, tex_negy, tex_negz, tex_posx, tex_posy, tex_posz);
-
+	geode->getOrCreateStateSet()->setRenderBinDetails(-1, "RenderBin");
 	auto view = m_renderInfo->m_mainView;
 
 	m_renderInfo->addOperation(new LambdaOperation([view, geode]() {

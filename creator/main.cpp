@@ -4,7 +4,6 @@
 #include <QQmlContext>
 #include "interface.h"
 
-static std::mutex s_mutex;
 int main(int argc, char** argv)
 {
 	QCoreApplication::setAttribute(Qt::ApplicationAttribute::AA_UseDesktopOpenGL);
